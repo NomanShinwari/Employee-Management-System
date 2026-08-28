@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MyLoginRegistration.Models.UserAccount>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        alert('@TempData["Error"]');
+    </script>
+}
+
+<h2>Dashboard</h2>
+
+@if (Session["UserID"] != null)
+{
+    <h4 style="padding: 14px">
+        Welcome @Session["Username"]
+    </h4>
+}
+<style>
+    .card {
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+</style>
+
+<div class="row mb-4">
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 text-bg-primary">
+            <i class="bi bi-people-fill" style="color: gold; font-size: 2rem;"></i>
+            <h5>Total Users</h5>
+            <h2 id="totalUsers"></h2>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 text-bg-light">
+            <i class="bi bi-circle-fill" style="color: forestgreen; font-size: 2rem;"></i>
+            <h5>Active Users</h5>
+            <h2 id="activeUsers"></h2>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 text-bg-warning">
+            <i class="bi bi-person-raised-hand" style="color: black; font-size: 2rem;"></i>
+            <h5>New Registrations</h5>
+            <h2 id="newUsers"></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 text-bg-secondary">
+            <i class="bi bi-building" style="color: white; font-size: 2rem;"></i>
+            <h5>Total Departments</h5>
+            <h2 id="departments"></h2>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100 text-bg-info">
+            <i class="bi bi-person-circle" style="color: coral; font-size: 2rem;"></i>
+            <h5>Total Employees</h5>
+            <h2 id="employees"></h2>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div style="width: 800px; height: 800px;" class="mt-5">
+        <canvas id="dashboardChart"></canvas>
+    </div>
+</div>
+    <script>
+        $(document).ready(function () {
+            loadDashboard();
+        });
+    </script>

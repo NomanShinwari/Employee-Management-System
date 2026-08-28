@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MyLoginRegistration.Models.UserAccount>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<div id="UserList">
+    <h2>Admin</h2>
+    @if (TempData["Message"] != null)
+    {
+        <p>@TempData["Message"]</p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                <td>
+                    <button class="btn btn-primary btneditUser" data-id="@item.UserID">Edit</button>
+                </td>
+                <td>
+                    @*   @using (Html.BeginForm("Delete", "Account", new { id = item.UserID }, FormMethod.Post))*@
+                    <button type="submit" class="btn btn-primary btndeleteuser" data-id="@item.UserID">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="modal fade" id="accountmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent">
+            </div>
+        </div>
+    </div>
+
+    <button id="btnCreateUser" class="btn btn-primary">Add User</button>
+</div>

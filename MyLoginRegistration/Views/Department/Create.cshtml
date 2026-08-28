@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MyLoginRegistration.Models.Department>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Department</h2>
+
+@using (Html.BeginForm())
+{
+    <div style="margin-top: 15px;">
+        <label>Department Name</label>
+        <input type="text" name="DepartmentName" />
+    </div>
+
+    <div style="margin-top: 15px;">
+        <label>Is Active</label>
+        <input type="hidden" name="IsActive" value="false" />
+        <input type="checkbox" name="IsActive" value="true" />
+    </div>
+
+    <div style="margin-top: 15px;">
+        <input type="submit" value="Save" class="btn btn-primary" style="width:10%; padding:10px; font-weight:600;" />
+    </div>
+}
+

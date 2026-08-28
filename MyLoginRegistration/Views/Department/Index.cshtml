@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MyLoginRegistration.Models.Department>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<div id="Departmentlist">
+    <h2>Departments</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    <button class="btn btn-primary btnEditDeptt" data-id="@item.UserID">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary btndeletedeptt" data-id="@item.UserID">Delete</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="modal fade" id="accountmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent">
+            </div>
+        </div>
+    </div>
+
+    <button id="btnCreateDeptt" class="btn btn-primary">Add Department</button>
+</div>

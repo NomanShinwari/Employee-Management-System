@@ -1,0 +1,46 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# NuGet
+packages/
+*.nupkg
+
+# Logs
+[Ll]ogs/
+*.log
+
+# Local databases
+*.mdf
+*.ldf
+*.sdf
+*.sqlite
+*.db
+
+# ReSharper / Rider
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local configuration / secrets
+Web.config.local
+secrets.json
+.env
+
+# Azure / deployment local files
+*.publishsettings
+
+# Temporary files
+*.tmp
+*.bak

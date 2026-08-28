@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copy this file to Web.config and replace the placeholder values. -->
+<configuration>
+  <appSettings>
+    <add key="GoogleClientId" value="YOUR_GOOGLE_CLIENT_ID" />
+    <add key="GoogleClientSecret" value="YOUR_GOOGLE_CLIENT_SECRET" />
+    <add key="JwtSecret" value="YOUR_LONG_RANDOM_JWT_SECRET" />
+    <add key="JwtExpiryMinutes" value="60" />
+  </appSettings>
+</configuration>

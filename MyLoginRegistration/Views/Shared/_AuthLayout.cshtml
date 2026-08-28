@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <div class="content">
+
+        @RenderBody()
+
+    </div>
+
+    <script src=@Url.Content("~/Scripts/Jquery/Login.js")></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

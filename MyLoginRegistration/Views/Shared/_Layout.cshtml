@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 230px;
+            height: 100vh;
+            background: #1f2937;
+            color: white;
+        }
+
+            .sidebar h2 {
+                text-align: center;
+                padding: 20px;
+                border-bottom: 1px solid #444;
+            }
+
+            .sidebar a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 15px 20px;
+            }
+
+                .sidebar a:hover {
+                    background: #374151;
+                }
+
+        .content {
+            margin-left: 230px;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    @if (Request.Cookies["jwtToken"] != null && User.Identity.IsAuthenticated)
+    {
+        <div class="sidebar">
+
+            <h2>Dashboard</h2>
+
+            @Html.ActionLink("Home", "LoggedIn", "Account")
+
+            @Html.ActionLink("Users", "Index", "Account")
+
+            @Html.ActionLink("Department", "Index", "Department")
+
+            @Html.ActionLink("Employees", "Index", "Employee")
+
+            @Html.ActionLink("Logout", "Logout", "Account")
+
+        </div>
+    }
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+    <div class="content">
+
+        @RenderBody()
+
+    </div>
+
+    <script src=@Url.Content("~/Scripts/Jquery/Account.js")></script>
+    <script src=@Url.Content("~/Scripts/Jquery/Emplooye.js")></script>
+    <script src=@Url.Content("~/Scripts/Jquery/Department.js")></script>
+    <script src=@Url.Content("~/Scripts/Jquery/User.js")></script>
+    <script src="@Url.Content("~/Scripts/Jquery/Register.js")"></script>
+
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
