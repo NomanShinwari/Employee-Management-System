@@ -1,10 +1,10 @@
-# Employee Management System
+ Employee Management System
 
-A web-based Employee Management System built with **ASP.NET MVC 5**, **ASP.NET Web API**, **Entity Framework 6**, **SQL Server**, and **jQuery/AJAX**.
+A web-based Employee Management System built with ASP.NET MVC 5, ASP.NET Web API, Entity Framework 6, SQL Server, and jQuery/AJAX.
 
 The project was developed as a learning project to practice real-world application architecture, CRUD operations, authentication, authorization, REST APIs, and external authentication.
 
-## Features
+ Features
 
 - User registration and login
 - Employee management (Create, Read, Update, Delete)
@@ -21,7 +21,7 @@ The project was developed as a learning project to practice real-world applicati
 - ELMAH error handling
 - NLog configuration
 
-## Technologies
+ Technologies
 
 - C#
 - ASP.NET MVC 5
@@ -36,7 +36,7 @@ The project was developed as a learning project to practice real-world applicati
 - Google OAuth 2.0
 - Visual Studio 2022
 
-## Architecture
+ Architecture
 
 The application follows a simple layered approach:
 
@@ -56,7 +56,7 @@ SQL Server
 
 Authentication and authorization are handled through JWT and Google OAuth, with role-based authorization for protected functionality.
 
-## Project Structure
+ Project Structure
 
 ```text
 MyLoginRegistration/
@@ -75,19 +75,19 @@ MyLoginRegistration/
 └── Web.config.example # Configuration template
 ```
 
-## Setup
+ Setup
 
-### 1. Clone the repository
+ 1. Clone the repository
 
 ```bash
 git clone <your-repository-url>
 ```
 
-### 2. Restore NuGet packages
+ 2. Restore NuGet packages
 
-Open the solution in **Visual Studio 2022**. NuGet package restore should restore the packages listed in `packages.config`.
+Open the solution in Visual Studio 2022. NuGet package restore should restore the packages listed in `packages.config`.
 
-### 3. Configure application secrets
+ 3. Configure application secrets
 
 Open `Web.config` and replace:
 
@@ -99,9 +99,9 @@ YOUR_LONG_RANDOM_JWT_SECRET
 
 For Google login, configure the OAuth credentials in Google Cloud Console and add the appropriate redirect URI for your local application.
 
-**Never commit real secrets to GitHub.**
+Never commit real secrets to GitHub.
 
-### 4. Configure SQL Server
+ 4. Configure SQL Server
 
 The project uses Entity Framework Code First. Configure your SQL Server/LocalDB environment as required by your development setup, then run the Entity Framework migrations from the Package Manager Console if necessary:
 
@@ -109,15 +109,17 @@ The project uses Entity Framework Code First. Configure your SQL Server/LocalDB 
 Update-Database
 ```
 
-### 5. Run
+ 5. Run
 
 Open the solution in Visual Studio and run the application using IIS Express.
 
-## Security Note
+ Security Note
 
 Secrets are intentionally replaced with placeholders in the public repository. Keep production credentials outside source control and use strong, randomly generated JWT signing keys.
 
-## Learning Goals
+Screenshots of the Employee Management System are available in the screenshots folder.
+
+ Learning Goals
 
 This project was built to practice:
 
@@ -132,7 +134,7 @@ This project was built to practice:
 - OAuth 2.0 / Google authentication
 - SQL Server database operations
 
-## Future Improvements
+ Future Improvements
 
 - Add automated unit/integration tests
 - Improve dependency injection
